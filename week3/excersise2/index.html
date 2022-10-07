@@ -1,0 +1,21 @@
+<section id="app">
+  <h1>Tip Calculator (vue.js)</h1>
+  <hr>
+  <div>
+    Bill: <input type="number" min="0" v-model.number="total" @change="onChange"> BTC
+  </div>
+
+  <div>
+    Tip Percentage
+    <select v-model="selected_operation" @change="onChange">
+      <option :value="operation" v-for="operation in operations">
+        {{ operation }}%
+      </option>
+    </select>
+  </div>
+  
+  <div v-if="result">
+    Your tip is {{ result }} BTC
+  </div>
+  
+</section>
