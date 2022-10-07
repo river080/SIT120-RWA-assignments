@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <script src='main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+
+</head>
+<body>
+  <h2>Computed Properties</h2>
+<div id="app1">
+
+First Name: <input v-model="m1"  placeholder="First name Here"><br>
+Last Name: <input v-model="m2" placeholder="Last name Here">
+<br>
+<br>
+
+<p>Computed Propery Name is: {{m1|reverse}} {{m2|reverse}}</p>
+
+</div>
+
+<script>
+  var app1 = new Vue ({
+    el: '#app1',
+    data:{
+        m1:'Ben',
+        m2:'Monaghram',
+
+    },
+    filters: {
+      reverse: function(data) {
+          const reverse =
+              data.split("").reverse().join("");
+          return reverse;}
+      }
+})
+
+
+</script>
+
+
+
+
+
+</body>
